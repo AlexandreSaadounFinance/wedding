@@ -9,32 +9,64 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: #f5f5f5;
-            color: #333;
+            background: url('https://gazebbo.co.il/wp-content/uploads/sites/431/2023/05/gallery2020305_0002_Gazebbo-27-of-453-2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
         }
 
-        .container {
+        .overlay {
+            background: rgba(0, 0, 0, 0.5); /* Assombrit l'arrière-plan */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 50px 20px;
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             font-family: 'Pinyon Script', cursive;
             font-size: 3rem;
-            text-align: center;
             margin-bottom: 20px;
+            color: #333;
         }
 
         p {
             font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .address {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .icon {
+            margin: 20px 0;
+        }
+
+        .icon img {
+            width: 50px;
+            height: 50px;
         }
 
         .back-button {
-            display: block;
+            display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 1rem;
@@ -42,7 +74,7 @@
             background: #333;
             text-decoration: none;
             border-radius: 5px;
-            text-align: center;
+            transition: background 0.3s ease;
         }
 
         .back-button:hover {
@@ -51,20 +83,17 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="overlay"></div>
+    <div class="content">
         <h1>Beach Party</h1>
-        <p><strong>Date :</strong> Le 24 juin 2025</p>
-        <p><strong>Lieu :</strong> Gazebo, Hertzylia</p>
-        <p>Rejoignez-nous pour une soirée festive sur la plage !</p>
+        <p>Rejoignez-nous pour une soirée festive au bord de la mer !</p>
+        <p><strong>Date :</strong> Vendredi 18 août 2025</p>
+        <p><strong>Lieu :</strong> Gazebo, situé au <span class="address">Ramat Yam St 5, Herzliya, Israël</span>.</p>
+        <div class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/palm-tree.png" alt="Palmier">
+        </div>
         <a href="details.html" class="back-button">Retour</a>
     </div>
 </body>
 </html>
-"""
 
-# Save to file
-file_path = "/mnt/data/beach-party.html"
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(beach_party_html_content)
-
-file_path
