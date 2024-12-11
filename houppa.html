@@ -1,0 +1,72 @@
+# Saving the houppa.html content as requested
+
+houppa_html_content = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houppa - Salomé & Alexandre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Houppa</h1>
+        <p><strong>Date :</strong> Le 23 juin 2025</p>
+        <p><strong>Lieu :</strong> Kochav Hayam</p>
+        <p>Une cérémonie symbolique et magique en bord de mer.</p>
+        <a href="details.html" class="back-button">Retour</a>
+    </div>
+</body>
+</html>
+"""
+
+# Save to file
+file_path = "/mnt/data/houppa.html"
+with open(file_path, "w", encoding="utf-8") as file:
+    file.write(houppa_html_content)
+
+file_path
