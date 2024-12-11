@@ -15,84 +15,105 @@
             text-align: center;
         }
 
-        .overlay {
-            background: rgba(0, 0, 0, 0.5); /* Assombrit l'arrière-plan */
-            position: absolute;
+        /* Barre de navigation */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+            z-index: 1000;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 1.8rem;
+            color: #b18857;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            font-size: 1.2rem;
+            font-family: 'Pinyon Script', cursive;
+            color: #b18857;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #8e6c3a;
+        }
+
+        /* Contenu principal */
         .content {
             position: relative;
-            z-index: 1;
-            padding: 50px 20px;
+            padding: 100px 20px;
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: #f9e4c8;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-family: 'Pinyon Script', cursive;
             font-size: 3rem;
-            margin-bottom: 20px;
-            color: #333;
+            margin: 20px 0;
+            color: white;
         }
 
         p {
             font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 20px;
+            margin: 10px 0;
         }
 
-        .address {
+        .highlight {
+            font-size: 1.4rem;
             font-style: italic;
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .icon {
-            margin: 20px 0;
-        }
-
-        .icon img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
-            background: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: #555;
+            color: #f9e4c8;
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    <div class="content">
-        <h1>Beach Party</h1>
-        <p>Rejoignez-nous pour une soirée festive au bord de la mer !</p>
-        <p><strong>Date :</strong> Vendredi 18 août 2025</p>
-        <p><strong>Lieu :</strong> Gazebo, situé au <span class="address">Ramat Yam St 5, Herzliya, Israël</span>.</p>
-        <div class="icon">
-            <img src="https://img.icons8.com/ios-filled/50/000000/palm-tree.png" alt="Palmier">
+    <!-- Barre de navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo">S & A</div>
+            <div class="nav-links">
+                <a href="mairie.html" class="nav-item">Mairie</a>
+                <a href="houppa.html" class="nav-item">Houppa & Soirée</a>
+                <a href="beach-party.html" class="nav-item">Beach Party</a>
+                <a href="details.html" class="nav-item">Retour</a>
+            </div>
         </div>
-        <a href="details.html" class="back-button">Retour</a>
+    </header>
+
+    <!-- Contenu principal -->
+    <div class="content">
+        <div class="header">Beach Party</div>
+        <h1>Salomé & Alexandre</h1>
+        <p class="highlight">Rejoignez-nous pour une soirée festive au bord de la mer !</p>
+        <p><strong>Date :</strong> Vendredi 18 août 2025</p>
+        <p><strong>Lieu :</strong> Gazebo, situé au Ramat Yam St 5, Herzliya, Israël</p>
     </div>
 </body>
 </html>
