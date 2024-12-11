@@ -1,6 +1,4 @@
-# Saving the mairie.html content as requested
-
-mairie_html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -17,34 +15,42 @@ mairie_html_content = """<!DOCTYPE html>
 
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 50px auto;
+            padding: 30px;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            text-align: center;
         }
 
         h1 {
             font-family: 'Pinyon Script', cursive;
             font-size: 3rem;
-            text-align: center;
             margin-bottom: 20px;
+            color: #333;
         }
 
         p {
             font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .address {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
 
         .back-button {
-            display: block;
-            margin-top: 20px;
+            display: inline-block;
+            margin-top: 30px;
             padding: 10px 20px;
             font-size: 1rem;
             color: white;
             background: #333;
             text-decoration: none;
             border-radius: 5px;
-            text-align: center;
+            transition: background 0.3s ease;
         }
 
         .back-button:hover {
@@ -57,16 +63,10 @@ mairie_html_content = """<!DOCTYPE html>
         <h1>Mairie</h1>
         <p><strong>Date :</strong> Le 21 juin 2025</p>
         <p><strong>Lieu :</strong> Mairie de Saint-Mandé</p>
+        <p class="address">10 Place Digeon, 94160 Saint-Mandé</p>
         <p>La cérémonie sera suivie d'un vin d'honneur.</p>
         <a href="details.html" class="back-button">Retour</a>
     </div>
 </body>
 </html>
-"""
 
-# Save to file
-file_path = "/mnt/data/mairie.html"
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(mairie_html_content)
-
-file_path
