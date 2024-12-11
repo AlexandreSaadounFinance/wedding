@@ -1,6 +1,4 @@
-# Saving the index.html content as requested
-
-index_html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +11,6 @@ index_html_content = """<!DOCTYPE html>
             font-family: 'Roboto', sans-serif;
             overflow: hidden;
             background: #000;
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .hero {
@@ -37,16 +29,49 @@ index_html_content = """<!DOCTYPE html>
             font-family: 'Pinyon Script', cursive;
             font-size: 4rem;
             margin-bottom: 10px;
-            animation: slideDown 1s ease-out;
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        h1 {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .countdown div {
+            text-align: center;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .countdown span {
+            display: block;
+            font-size: 3rem;
+            font-family: 'Pinyon Script', cursive;
+            color: white;
+        }
+
+        .countdown div::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid white;
+            border-radius: 50%;
+            z-index: -1;
         }
 
         .button {
-            margin-top: 30px;
+            margin-top: 50px;
             padding: 15px 30px;
             font-size: 1.2rem;
             color: white;
@@ -68,18 +93,50 @@ index_html_content = """<!DOCTYPE html>
     <div class="hero">
         <div class="logo">S & A</div>
         <h1>Salomé & Alexandre</h1>
+        <div class="countdown" id="countdown">
+            <div>
+                <span id="days">00</span>
+                Jours
+            </div>
+            <div>
+                <span id="hours">00</span>
+                Heures
+            </div>
+            <div>
+                <span id="minutes">00</span>
+                Minutes
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                Secondes
+            </div>
+        </div>
         <a href="details.html" class="button">Voir l'invitation</a>
     </div>
+
+    <script>
+        const countdownDate = new Date('August 20, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = countdownDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
-"""
 
-# Save to file
-file_path = "/mnt/data/index.html"
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(index_html_content)
-
-file_path
 
 
 
