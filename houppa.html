@@ -9,14 +9,13 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #fffbe6, #f9e4c8);
-            color: #5a4638;
+            background: linear-gradient(to bottom, #fdf6f0, #fae3d9);
+            color: #5a4231;
             text-align: center;
         }
 
-        /* Barre de navigation */
         header {
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -27,7 +26,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 10px 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -55,43 +54,54 @@
             color: #8e6c3a;
         }
 
-        /* Contenu principal */
         .content {
-            position: relative;
-            padding: 100px 20px;
+            padding: 50px 20px;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            text-align: center;
         }
 
-        .header {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 2.5rem;
-            text-transform: uppercase;
+        .logo-ring {
+            font-size: 4rem;
             color: #b18857;
-            margin-bottom: 20px;
+            margin: 30px 0;
         }
 
         h1 {
             font-family: 'Pinyon Script', cursive;
             font-size: 3rem;
-            margin: 20px 0;
-            color: #5a4638;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-style: italic;
+            color: #8e6c3a;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin: 10px 0;
         }
 
         .highlight {
             font-size: 1.4rem;
-            font-style: italic;
+            font-weight: bold;
             color: #b18857;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #8e6c3a;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    <!-- Barre de navigation -->
     <header>
         <div class="navbar">
             <div class="logo">S & A</div>
@@ -104,18 +114,22 @@
         </div>
     </header>
 
-    <!-- Contenu principal -->
     <div class="content">
-        <div class="header">Houppa</div>
-        <h1>Salomé & Alexandre</h1>
-        <p class="highlight">Célébrons ce moment unique</p>
-        <p><strong>Date :</strong> Lundi 23 juin 2025</p>
-        <p><strong>Lieu :</strong> Kochav Hayam</p>
-        <p>Une cérémonie symbolique et magique en bord de mer.</p>
+        <div class="logo-ring">&#128141;</div>
+        <h1>Houppa & Soirée</h1>
+        <p class="intro">Yes For Life</p>
+
+        <p class="highlight">Salomé & Alexandre</p>
+
+        <p>Ont la joie de vous faire part de leur mariage</p>
+        <p><strong>Date :</strong> Lundi 18 Août 2025</p>
+        <p><strong>Lieu :</strong> Kochav Hayam, Israël</p>
+
+        <p>La cérémonie sera suivie d’une fête mémorable.</p>
+
+        <p class="footer-text">Une douce pensée pour nos grands-parents qui veillent sur nous.</p>
     </div>
 </body>
-</html>
-
 </html>
 
 
