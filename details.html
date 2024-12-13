@@ -58,6 +58,9 @@
             margin: 50px auto;
             padding: 20px;
             max-width: 600px;
+            background: white; /* Fond blanc */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .event-section {
@@ -67,7 +70,7 @@
         .event-title {
             font-family: 'Pinyon Script', cursive;
             font-size: 2.5rem;
-            color: #333;
+            color: #000; /* Titre en noir */
             position: relative;
             display: inline-block;
         }
@@ -77,13 +80,13 @@
             display: block;
             width: 100%;
             height: 2px;
-            background: #d19a6b;
+            background: #000; /* Barre sous le titre en noir */
             margin: 10px 0;
         }
 
         .event-date {
             font-size: 1rem;
-            color: #666;
+            color: #000; /* Date en noir */
             margin-top: 5px;
         }
     </style>
@@ -102,21 +105,27 @@
     </header>
 
     <div class="details-container">
+        <!-- La Mairie Section -->
         <div class="event-section">
             <div class="event-title">La Mairie</div>
-            <div class="event-date">Mercredi 21 Juin 2025</div>
+            <div class="event-date">Jeudi 27 Octobre 2022</div>
         </div>
-        <div class="event-section">
-            <div class="event-title">La Beach Party</div>
-            <div class="event-date">Lundi 18 Août 2025</div>
-        </div>
+
+        <!-- La Houppa Section -->
         <div class="event-section">
             <div class="event-title">La Houppa</div>
-            <div class="event-date">Mercredi 20 Août 2025</div>
+            <div class="event-date">Mardi 1 Novembre 2022</div>
+        </div>
+
+        <!-- La Soirée Section -->
+        <div class="event-section">
+            <div class="event-title">La Soirée</div>
+            <div class="event-date">Mardi 1 Novembre 2022</div>
         </div>
     </div>
 </body>
 </html>
+
 
 
 
