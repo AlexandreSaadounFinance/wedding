@@ -3,125 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réponse - Salomé & Alexandre</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Confirmation de présence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: url('le-marbre.jpg') no-repeat center center fixed;
+            font-family: 'Pinyon Script', cursive;
+            background: url('./images/le-marbre.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: black;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 10px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar .logo {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 1.8rem;
-            color: #b18857;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-item {
-            font-size: 1.2rem;
-            font-family: 'Pinyon Script', cursive;
-            color: #b18857;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-item:hover {
-            color: #8e6c3a;
+            height: 100vh;
+            color: black;
         }
 
         .form-container {
             background: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            border: 2px solid black;
-            border-radius: 15px;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
         .form-container h1 {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 2.5rem;
-            text-align: center;
-            color: black;
+            font-size: 2rem;
             margin-bottom: 20px;
         }
 
-        label {
+        .form-container label {
             display: block;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin: 10px 0 5px;
+            font-size: 1.2rem;
         }
 
-        input[type="text"],
-        input[type="number"],
-        select {
+        .form-container select, 
+        .form-container input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
+            padding: 8px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
+            font-family: 'Pinyon Script', cursive;
             font-size: 1rem;
         }
 
-        button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            font-size: 1.2rem;
+        .form-container button {
             background: #b18857;
             color: white;
+            padding: 10px 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s ease;
+            font-family: 'Pinyon Script', cursive;
         }
 
-        button:hover {
+        .form-container button:hover {
             background: #8e6c3a;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">S & A</div>
-            <div class="nav-links">
-                <a href="mairie.html" class="nav-item">Mairie</a>
-                <a href="houppa.html" class="nav-item">Houppa & Soirée</a>
-                <a href="beach-party.html" class="nav-item">Beach Party</a>
-                <a href="details.html" class="nav-item">Retour</a>
-            </div>
-        </div>
-    </header>
-
     <div class="form-container">
         <h1>Confirmation</h1>
-        <form action="/submit-response" method="POST">
+        <form>
             <label for="mairie">Présence à la mairie :</label>
             <select id="mairie" name="mairie">
                 <option value="oui">Oui</option>
@@ -134,14 +82,22 @@
                 <option value="non">Non</option>
             </select>
 
-            <label for="beach-party">Présence à la beach party :</label>
-            <select id="beach-party" name="beach-party">
+            <label for="invites_houppa">Nombre d'invités à la houppa :</label>
+            <input type="number" id="invites_houppa" name="invites_houppa" min="0">
+
+            <label for="beach">Présence à la beach party :</label>
+            <select id="beach" name="beach">
                 <option value="oui">Oui</option>
                 <option value="non">Non</option>
             </select>
+
+            <label for="invites_beach">Nombre d'invités à la beach party :</label>
+            <input type="number" id="invites_beach" name="invites_beach" min="0">
 
             <button type="submit">Envoyer</button>
         </form>
     </div>
 </body>
+</html>
+
 </html>
