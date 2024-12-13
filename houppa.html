@@ -60,15 +60,13 @@
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            text-align: center;
         }
 
         .hebrew-text {
             font-size: 1.5rem;
-            font-family: 'Pinyon Script', cursive;
             font-weight: bold;
             margin-top: 20px;
-            color: #e0c59f;
+            color: #b18857;
         }
 
         h1 {
@@ -81,13 +79,12 @@
             font-size: 1.2rem;
             margin-bottom: 40px;
             font-style: italic;
-            color: #e0c59f;
+            color: #b18857;
         }
 
         p {
             font-size: 1.1rem;
             margin: 10px 0;
-            color: #e0c59f;
         }
 
         .highlight {
@@ -99,15 +96,21 @@
         .footer-text {
             font-size: 0.9rem;
             font-style: italic;
-            color: #e0c59f;
+            color: #b18857;
             margin-top: 30px;
         }
 
         .guest-list {
-            text-align: left;
+            display: flex;
+            justify-content: space-between;
             margin-top: 30px;
-            color: #e0c59f;
+            color: #b18857;
             font-size: 1.1rem;
+        }
+
+        .guest-list .left,
+        .guest-list .right {
+            width: 45%;
         }
 
         .guest-list p {
@@ -139,21 +142,22 @@
         <p><strong>Lieu :</strong> Kochav Hayam, Israël</p>
 
         <div class="guest-list">
-            <p>Mr Marco Parienti</p>
-            <p>Brigitte Taieb</p>
-            <p>Yael et Haim Lucas</p>
-            <p>Eliane et Henri Fitoussi</p>
-            <p>Elisabeth Fitoussi</p>
-            <p>Steve Saadoun</p>
+            <div class="left">
+                <p>Mr Marco Parienti</p>
+                <p>Brigitte Taieb</p>
+                <p>Yael et Haim Lucas</p>
+            </div>
+            <div class="right">
+                <p>Eliane et Henri Fitoussi</p>
+                <p>Elisabeth Fitoussi</p>
+                <p>Steve Saadoun</p>
+            </div>
         </div>
 
         <p>La cérémonie sera suivie d’une réception mémorable.</p>
 
         <p class="footer-text">Une douce pensée pour nos grands-parents qui veillent sur nous.</p>
-
-        <p class="footer-text">Samuel Saadoun</p>
-        <p class="footer-text">Etoile Saadoun</p>
-        <p class="footer-text">Liliane Parienti</p>
+        <p class="footer-text">Samuel Saadoun<br>Etoile Saadoun<br>Liliane Parienti</p>
     </div>
 </body>
 </html>
