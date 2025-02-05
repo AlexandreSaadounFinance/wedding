@@ -1,104 +1,70 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation de présence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Pinyon Script', cursive;
-            background: url('./images/le-marbre.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: black;
-        }
+<form id="rsvp-form">
+    <label for="nom">Veuillez entrer votre nom :</label>
+    <input type="text" id="nom" name="nom" required>
 
-        .form-container {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid black;
-            border-radius: 8px;
-            padding: 20px;
-            width: 400px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+    <label for="mairie">Présence à la Mairie (21/06) :</label>
+    <select id="mairie" name="mairie" required>
+        <option value="">Sélectionner</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select>
 
-        .form-container h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+    <label for="beach">Présence à la Beach Party (18/08) :</label>
+    <select id="beach" name="beach" required>
+        <option value="">Sélectionner</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select>
 
-        .form-container label {
-            display: block;
-            margin: 10px 0 5px;
-            font-size: 1.2rem;
-        }
+    <label for="houppa">Présence à la Houppa (20/08) :</label>
+    <select id="houppa" name="houppa" required>
+        <option value="">Sélectionner</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select>
 
-        .form-container select, 
-        .form-container input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: 'Pinyon Script', cursive;
-            font-size: 1rem;
-        }
+    <button type="submit">Envoyer</button>
+</form>
 
-        .form-container button {
-            background: #b18857;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            font-family: 'Pinyon Script', cursive;
-        }
+<script>
+document.getElementById("rsvp-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        .form-container button:hover {
-            background: #8e6c3a;
-        }
-    </style>
-</head>
-<body>
-    <div class="form-container">
-        <h1>Confirmation</h1>
-        <form>
-            <label for="mairie">Présence à la Mairie (21/06) :</label>
-            <select id="mairie" name="mairie">
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-            </select>
+    var formData = new FormData(this);
+    var params = new URLSearchParams(formData).toString();
 
+    fetch("TON_URL_SCRIPT_DEPLOYÉ_ICI", {
+        method: "POST",
+        body: params,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("Votre réponse a été enregistrée !");
+        document.getElementById("rsvp-form").reset();
+    })
+    .catch(error => console.error("Erreur :", error));
+});
+</script>
 
-            <label for="beach">Présence à la Beach Party (18/08):</label>
-            <select id="beach" name="beach">
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-            </select>
-
-            <label for="invites_beach">Nombre d'invités à la Beach Party :</label>
-            <input type="number" id="invites_beach" name="invites_beach" min="0">
-
-            <label for="houppa">Présence à la Houppa (20/08) :</label>
-            <select id="houppa" name="houppa">
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-            </select>
-
-            <label for="invites_houppa">Nombre d'invités à la Houppa :</label>
-            <input type="number" id="invites_houppa" name="invites_houppa" min="0">
-
-            <button type="submit">Envoyer</button>
-        </form>
-    </div>
-</body>
-</html>
-
-</html>
