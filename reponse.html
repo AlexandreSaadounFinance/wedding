@@ -1,70 +1,135 @@
-<form id="rsvp-form">
-    <label for="nom">Veuillez entrer votre nom :</label>
-    <input type="text" id="nom" name="nom" required>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('im01.jpg') no-repeat center center fixed; /* Utilisation de la nouvelle image */
+            background-size: contain; /* Adapter l'image sans la couper */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    <label for="mairie">Présence à la Mairie (21/06) :</label>
-    <select id="mairie" name="mairie" required>
-        <option value="">Sélectionner</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-    </select>
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%; /* Largeur adaptée pour mobile */
+            max-width: 400px; /* Limite de largeur sur écrans larges */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-    <label for="beach">Présence à la Beach Party (18/08) :</label>
-    <select id="beach" name="beach" required>
-        <option value="">Sélectionner</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-    </select>
+        form {
+            display: flex;
+            flex-direction: column; /* Les champs sont placés verticalement */
+        }
 
-    <label for="houppa">Présence à la Houppa (20/08) :</label>
-    <select id="houppa" name="houppa" required>
-        <option value="">Sélectionner</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-    </select>
+        label {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
 
-    <button type="submit">Envoyer</button>
-</form>
+        input, select, button {
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-<script>
-document.getElementById("rsvp-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
 
-    var formData = new FormData(this);
-    var params = new URLSearchParams(formData).toString();
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="rsvp-form">
+            <label for="nom">Veuillez entrer votre nom :</label>
+            <input type="text" id="nom" name="nom" required>
 
-    fetch("TON_URL_SCRIPT_DEPLOYÉ_ICI", {
-        method: "POST",
-        body: params,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" }
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert("Votre réponse a été enregistrée !");
-        document.getElementById("rsvp-form").reset();
-    })
-    .catch(error => console.error("Erreur :", error));
-});
-</script>
+            <label for="mairie">Présence à la Mairie (21/06) :</label>
+            <select id="mairie" name="mairie" required>
+                <option value="">Sélectionner</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+
+            <label for="beach">Présence à la Beach Party (18/08) :</label>
+            <select id="beach" name="beach" required>
+                <option value="">Sélectionner</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+
+            <label for="houppa">Présence à la Houppa (20/08) :</label>
+            <select id="houppa" name="houppa" required>
+                <option value="">Sélectionner</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("rsvp-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+            var params = new URLSearchParams(formData).toString();
+
+            fetch("TON_URL_SCRIPT_DEPLOYÉ_ICI", {
+                method: "POST",
+                body: params,
+                headers: { "Content-Type": "application/x-www-form-urlencoded" }
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Votre réponse a été enregistrée !");
+                document.getElementById("rsvp-form").reset();
+            })
+            .catch(error => console.error("Erreur :", error));
+        });
+    </script>
+</body>
+</html>
+
 
