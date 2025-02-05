@@ -8,8 +8,8 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('im01.jpg') no-repeat center center fixed; /* Utilisation de la nouvelle image */
-            background-size: contain; /* Adapter l'image sans la couper */
+            background: url('images/img01.jpg') no-repeat center center fixed; /* Vérifiez que le chemin est correct */
+            background-size: cover; /* Assure que l'image couvre tout l'écran */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,43 +17,52 @@
         }
 
         .form-container {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            padding: 20px;
-            width: 90%; /* Largeur adaptée pour mobile */
-            max-width: 400px; /* Limite de largeur sur écrans larges */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.9); /* Fond légèrement transparent */
+            border-radius: 10px;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px; /* Pour que le formulaire ne soit pas trop large */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre élégante */
+            text-align: center;
         }
 
         form {
             display: flex;
-            flex-direction: column; /* Les champs sont placés verticalement */
+            flex-direction: column; /* Champs alignés verticalement */
         }
 
         label {
-            margin-top: 10px;
-            font-size: 1rem;
+            margin-top: 15px;
+            font-size: 1.1rem;
             font-weight: bold;
+            color: #333; /* Couleur sombre pour le texte */
         }
 
-        input, select, button {
+        input, select {
             margin-top: 5px;
             padding: 10px;
             font-size: 1rem;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
             margin-top: 20px;
+            padding: 12px;
+            font-size: 1rem;
+            color: white;
+            background: #007BFF; /* Couleur bleue pour le bouton */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         button:hover {
-            background: #45a049;
+            background: #0056b3; /* Bleu plus foncé au survol */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
         }
     </style>
 </head>
@@ -131,5 +140,3 @@
     </script>
 </body>
 </html>
-
-
