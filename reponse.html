@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP</title>
+    <title>RSVP Mariage</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('images/im01.jpg') no-repeat center center fixed; /* Vérifiez que le chemin est correct */
-            background-size: cover; /* Assure que l'image couvre tout l'écran */
+            background: url('images/im01.jpg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,25 +17,25 @@
         }
 
         .form-container {
-            background:none; /* Fond légèrement transparent */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             padding: 25px;
             width: 90%;
-            max-width: 400px; /* Pour que le formulaire ne soit pas trop large */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre élégante */
+            max-width: 400px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
         form {
             display: flex;
-            flex-direction: column; /* Champs alignés verticalement */
+            flex-direction: column;
         }
 
         label {
             margin-top: 15px;
             font-size: 1.1rem;
             font-weight: bold;
-            color: #333; /* Couleur sombre pour le texte */
+            color: #333;
         }
 
         input, select {
@@ -53,7 +53,7 @@
             padding: 12px;
             font-size: 1rem;
             color: white;
-            background: #007BFF; /* Couleur bleue pour le bouton */
+            background: #007BFF;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -61,7 +61,7 @@
         }
 
         button:hover {
-            background: #0056b3; /* Bleu plus foncé au survol */
+            background: #0056b3;
             box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
         }
     </style>
@@ -69,49 +69,33 @@
 <body>
     <div class="form-container">
         <form id="rsvp-form">
-            <label for="nom">Veuillez entrer votre nom :</label>
+            <h2>Réponse à notre mariage 💌</h2>
+
+            <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
 
             <label for="mairie">Présence à la Mairie (21/06) :</label>
             <select id="mairie" name="mairie" required>
                 <option value="">Sélectionner</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                <option value="6">6</option><option value="7">7</option><option value="8">8</option>
             </select>
 
             <label for="beach">Présence à la Beach Party (18/08) :</label>
             <select id="beach" name="beach" required>
                 <option value="">Sélectionner</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                <option value="6">6</option><option value="7">7</option><option value="8">8</option>
             </select>
 
             <label for="houppa">Présence à la Houppa (20/08) :</label>
             <select id="houppa" name="houppa" required>
                 <option value="">Sélectionner</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                <option value="6">6</option><option value="7">7</option><option value="8">8</option>
             </select>
 
             <button type="submit">Envoyer</button>
@@ -122,8 +106,18 @@
         document.getElementById("rsvp-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            var formData = new FormData(this);
-            var params = new URLSearchParams(formData).toString();
+            const nom = document.getElementById("nom").value.trim();
+            const mairie = document.getElementById("mairie").value;
+            const beach = document.getElementById("beach").value;
+            const houppa = document.getElementById("houppa").value;
+
+            if (!nom || !mairie || !beach || !houppa) {
+                alert("Merci de remplir toutes les informations avant de valider !");
+                return;
+            }
+
+            const formData = new FormData(this);
+            const params = new URLSearchParams(formData).toString();
 
             fetch("TON_URL_SCRIPT_DEPLOYÉ_ICI", {
                 method: "POST",
@@ -132,10 +126,13 @@
             })
             .then(response => response.text())
             .then(data => {
-                alert("Votre réponse a été enregistrée !");
+                alert("Merci pour votre réponse ! 💖");
                 document.getElementById("rsvp-form").reset();
             })
-            .catch(error => console.error("Erreur :", error));
+            .catch(error => {
+                console.error("Erreur :", error);
+                alert("Une erreur est survenue. Merci de réessayer plus tard.");
+            });
         });
     </script>
 </body>
