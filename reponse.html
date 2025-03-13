@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSVP Mariage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Great Vibes', cursive; /* Police stylisée */
             background: url('images/im01.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
@@ -17,25 +18,27 @@
         }
 
         .form-container {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
+            background: none; /* Suppression du fond blanc */
             padding: 25px;
             width: 90%;
             max-width: 400px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
         form {
             display: flex;
             flex-direction: column;
+            background: rgba(255, 255, 255, 0.2); /* Léger fond transparent pour lisibilité */
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px); /* Flou pour améliorer l'esthétique */
         }
 
         label {
             margin-top: 15px;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: #333;
+            color: white; /* Texte en blanc */
         }
 
         input, select {
@@ -51,9 +54,10 @@
         button {
             margin-top: 20px;
             padding: 12px;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
             color: white;
-            background: #007BFF;
+            background: black; /* Fond noir */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -61,15 +65,15 @@
         }
 
         button:hover {
-            background: #0056b3;
-            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+            background: #333; /* Noir légèrement éclairci au survol */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="form-container">
         <form id="rsvp-form">
-            <h2>Réponse à notre mariage 💌</h2>
+            <h2 style="color: white;">Réponse à notre mariage 💌</h2>
 
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
@@ -137,3 +141,4 @@
     </script>
 </body>
 </html>
+
