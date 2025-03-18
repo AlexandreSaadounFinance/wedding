@@ -9,14 +9,31 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #fffbe6, #f9e4c8);
             color: #5a4638;
             text-align: center;
+
+            /* Ajout de l'image de fond */
+            background-image: url('Pink Floral Watercolor Wedding Invitation.png'); /* Remplacez par l'URL de votre image */
+            background-size: cover; /* Adapte l'image à la taille de l'écran */
+            background-repeat: no-repeat; /* Empêche la répétition de l'image */
+            background-attachment: fixed; /* Fixe l'image pour éviter qu'elle ne défile */
+            background-position: center center; /* Centre l'image */
         }
+
+        /* Correction potentielle pour la couleur de fond, si nécessaire */
+        .content {
+            position: relative;
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.7); /* Ajoute un fond semi-transparent pour la lisibilité */
+            border-radius: 10px; /* Adoucit les angles du container */
+        }
+
 
         /* Barre de navigation */
         header {
-            background: white;
+            background: rgba(255, 255, 255, 0.9); /* Ajoute une transparence */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -56,12 +73,6 @@
         }
 
         /* Contenu principal */
-        .content {
-            position: relative;
-            padding: 100px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
 
         .header {
             font-family: 'Pinyon Script', cursive;
@@ -116,5 +127,4 @@
     </div>
 </body>
 </html>
-
 
