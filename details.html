@@ -1,132 +1,196 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails - Salomé & Alexandre</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: url('images/floral.jpg') no-repeat center center fixed; /* Image de fond */
-            background-size: cover;
-            color: #333;
-            text-align: center;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar .logo {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 2rem;
-            color: #d19a6b;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-item {
-            font-size: 1.4rem;
-            font-family: 'Pinyon Script', cursive;
-            color: #d19a6b;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-item:hover {
-            color: #aa6a3f;
-        }
-
-        .details-container {
-            margin: 50px auto;
-            padding: 20px;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .event-section {
-            margin: 30px 0;
-        }
-
-        .event-title {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 2.5rem;
-            color: #000; /* Titre en noir */
-            position: relative;
-            display: inline-block;
-        }
-
-        .event-title::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #000; /* Barre sous le titre en noir */
-            margin: 10px 0;
-        }
-
-        .event-date {
-            font-size: 1rem;
-            color: #000; /* Date en noir */
-            margin-top: 5px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil de Risque Investisseur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #e6f7ff;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">S & A</div>
-            <div class="nav-links">
-                <a href="mairie.html" class="nav-item">Mairie</a>
-                <a href="houppa.html" class="nav-item">Houppa & Soirée</a>
-                <a href="beach-party.html" class="nav-item">Beach Party</a>
-                <a href="reponse.html" class="nav-item">Réponse</a>
-            </div>
-        </div>
-    </header>
 
-    <div class="details-container">
-        <!-- La Mairie Section -->
-        <div class="event-section">
-            <div class="event-title">La Mairie</div>
-            <div class="event-date">21 Juin 2025</div>
-        </div>
+<h2>Formulaire de Profil Investisseur</h2>
+<form id="riskForm">
 
-        <!-- La Houppa Section -->
-        <div class="event-section">
-            <div class="event-title">La Beach Party</div>
-            <div class="event-date">Lundi 18 Août 2025</div>
-        </div>
+  <!-- SECTION 1 : Connaissances financières -->
+  <div class="question">
+    <label>1. Avez-vous déjà détenu des actions en direct ?</label>
+    <input type="radio" name="c1" value="oui" required> Oui<br>
+    <input type="radio" name="c1" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>2. Avez-vous déjà investi dans une assurance-vie ?</label>
+    <input type="radio" name="c2" value="oui" required> Oui<br>
+    <input type="radio" name="c2" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>3. Avez-vous un PEA (Plan d'Épargne en Actions) ?</label>
+    <input type="radio" name="c3" value="oui" required> Oui<br>
+    <input type="radio" name="c3" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>4. Combien d’opérations financières avez-vous effectuées ces 12 derniers mois ?</label>
+    <input type="radio" name="c4" value="0" required> Aucune<br>
+    <input type="radio" name="c4" value="1-5"> De 1 à 5<br>
+    <input type="radio" name="c4" value="5+"> Plus de 5<br>
+  </div>
+  <div class="question">
+    <label>5. Comprenez-vous le fonctionnement des produits structurés ?</label>
+    <input type="radio" name="c5" value="oui" required> Oui<br>
+    <input type="radio" name="c5" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>6. Avez-vous déjà subi une perte financière significative sur un placement ?</label>
+    <input type="radio" name="c6" value="oui" required> Oui<br>
+    <input type="radio" name="c6" value="non"> Non<br>
+  </div>
 
-        <!-- La Soirée Section -->
-        <div class="event-section">
-            <div class="event-title">La Soirée</div>
-            <div class="event-date">Mercredi 20 Août 2025</div>
-        </div>
-    </div>
+  <!-- SECTION 2 : Tolérance au risque -->
+  <div class="question">
+    <label>7. Que signifie le mot « risque » pour vous ?</label>
+    <input type="radio" name="q1" value="3" required> a. Potentiel de perte<br>
+    <input type="radio" name="q1" value="5"> b. Incertitude<br>
+    <input type="radio" name="q1" value="7"> c. Potentiel de gain<br>
+  </div>
+  <div class="question">
+    <label>8. Rapport rendement/risque : que privilégiez-vous ?</label>
+    <input type="radio" name="q2" value="4" required> a. Rendement<br>
+    <input type="radio" name="q2" value="5"> b. Équilibre<br>
+    <input type="radio" name="q2" value="7"> c. Moins de risque<br>
+  </div>
+  <div class="question">
+    <label>9. Quelle proportion de vos économies placeriez-vous sur des actifs risqués ?</label>
+    <input type="radio" name="q3" value="2" required> a. Aucune<br>
+    <input type="radio" name="q3" value="4"> b. Petite partie<br>
+    <input type="radio" name="q3" value="6"> c. Une part importante<br>
+    <input type="radio" name="q3" value="7"> d. L’essentiel<br>
+  </div>
+  <div class="question">
+    <label>10. Si un investissement chute de 10% dès le lendemain ?</label>
+    <input type="radio" name="q4" value="7" required> a. J'en rachète<br>
+    <input type="radio" name="q4" value="4"> b. Je ne fais rien<br>
+    <input type="radio" name="q4" value="3"> c. Je vends tout<br>
+    <input type="radio" name="q4" value="5"> d. J’attends et je vends<br>
+  </div>
+  <div class="question">
+    <label>11. Vous avez 30% de gain en 4 mois (objectif 10%/an), que faites-vous ?</label>
+    <input type="radio" name="q5" value="3" required> a. Vendre tout<br>
+    <input type="radio" name="q5" value="4"> b. Vendre une partie<br>
+    <input type="radio" name="q5" value="5"> c. Maintenir<br>
+    <input type="radio" name="q5" value="7"> d. Doubler<br>
+  </div>
+  <div class="question">
+    <label>12. En cas de gain inattendu, vous investissez :</label>
+    <input type="radio" name="q6" value="2" required> a. Dans un placement sûr<br>
+    <input type="radio" name="q6" value="4"> b. Dans votre portefeuille<br>
+    <input type="radio" name="q6" value="6"> c. Placement 50% de chance de gain<br>
+    <input type="radio" name="q6" value="7"> d. Placement 25% de doubler<br>
+  </div>
+  <div class="question">
+    <label>13. Accepteriez-vous plus de volatilité pour un placement durable ?</label>
+    <input type="radio" name="q7" value="4" required> Oui<br>
+    <input type="radio" name="q7" value="6"> Non<br>
+  </div>
+  <div class="question">
+    <label>14. Votre horizon de placement est :</label>
+    <input type="radio" name="q8" value="5" required> Moins de 5 ans<br>
+    <input type="radio" name="q8" value="6"> Entre 5 et 10 ans<br>
+    <input type="radio" name="q8" value="7"> Plus de 10 ans<br>
+  </div>
+  <div class="question">
+    <label>15. Un proche veut changer de vie pour un métier risqué :</label>
+    <input type="radio" name="q9" value="3" required> Je le dissuade<br>
+    <input type="radio" name="q9" value="4"> Je le conseille avec prudence<br>
+    <input type="radio" name="q9" value="6"> Je l'encourage<br>
+  </div>
+
+  <!-- Coordonnées -->
+  <div class="question">
+    <label>Votre Email :</label>
+    <input type="email" name="email" required>
+  </div>
+  <div class="question">
+    <label>Votre Téléphone :</label>
+    <input type="tel" name="phone" required>
+  </div>
+
+  <input type="submit" value="Obtenir mon profil">
+</form>
+
+<div class="result" id="result" style="display:none;"></div>
+
+<script>
+  document.getElementById('riskForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    let score = 0;
+
+    for (let i = 1; i <= 9; i++) {
+      const selected = form.querySelector(`input[name="q${i}"]:checked`);
+      if (selected) score += parseInt(selected.value);
+    }
+
+    let profile = "";
+    if (score < 36) {
+      profile = "🎯 Votre profil est : <strong>Prudent</strong><br>Vous privilégiez la sécurité et une croissance lente.";
+    } else if (score < 54) {
+      profile = "🎯 Votre profil est : <strong>Équilibré</strong><br>Vous recherchez un compromis entre risque et rendement.";
+    } else {
+      profile = "🎯 Votre profil est : <strong>Dynamique</strong><br>Vous acceptez une forte volatilité pour viser un rendement élevé.";
+    }
+
+    document.getElementById('result').innerHTML = `
+      <h3>Résultat</h3>
+      <p><strong>Score :</strong> ${score}</p>
+      <p>${profile}</p>
+      <p>📩 Nous vous recontacterons à l’adresse <strong>${form.email.value}</strong> ou au <strong>${form.phone.value}</strong>.</p>
+    `;
+    document.getElementById('result').style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script>
+
 </body>
 </html>
-
 
 
 
