@@ -1,145 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salomé & Alexandre - Accueil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Roboto:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            overflow: hidden;
-            background: url('images/img00.jpg') no-repeat center center/cover; /* Utilisation de l'image */
-            height: 100vh; /* Hauteur totale de la fenêtre */
-        }
-
-        .hero {
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .logo {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .countdown div {
-            text-align: center;
-            font-size: 1rem;
-            position: relative;
-            font-family: 'Playfair Display', serif;
-            color: white
-        }
-
-        .countdown span {
-            display: block;
-            font-size: 2.2rem;
-            font-family: 'Pinyon Script', cursive;
-            color: white; 
-        }
-
-        .countdown div::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90px;
-            height: 90px;
-            border: 2px solid black; /* Cercle en noir */
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        .button {
-            margin-top: 50px;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-
-        .button:hover {
-            background: white;
-            color: black;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil de Risque Investisseur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #e6f7ff;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="logo">S & A</div>
-        <h1>Salomé & Alexandre</h1>
-        <div class="countdown" id="countdown">
-            <div>
-                <span id="days">00</span>
-                Jours
-            </div>
-            <div>
-                <span id="hours">00</span>
-                Heures
-            </div>
-            <div>
-                <span id="minutes">00</span>
-                Minutes
-            </div>
-            <div>
-                <span id="seconds">00</span>
-                Secondes
-            </div>
-        </div>
-        <a href="details.html" class="button">Voir l'invitation</a>
-    </div>
 
-    <script>
-        const countdownDate = new Date('August 20, 2025 18:00:00').getTime();
+<h2>Formulaire de Profil Investisseur</h2>
+<form id="riskForm">
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = countdownDate - now;
+  <!-- SECTION 1 : Connaissances financières -->
+  <div class="question">
+    <label>1. Avez-vous déjà détenu des actions en direct ?</label>
+    <input type="radio" name="c1" value="oui" required> Oui<br>
+    <input type="radio" name="c1" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>2. Avez-vous déjà investi dans une assurance-vie ?</label>
+    <input type="radio" name="c2" value="oui" required> Oui<br>
+    <input type="radio" name="c2" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>3. Avez-vous un PEA (Plan d'Épargne en Actions) ?</label>
+    <input type="radio" name="c3" value="oui" required> Oui<br>
+    <input type="radio" name="c3" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>4. Combien d’opérations financières avez-vous effectuées ces 12 derniers mois ?</label>
+    <input type="radio" name="c4" value="0" required> Aucune<br>
+    <input type="radio" name="c4" value="1-5"> De 1 à 5<br>
+    <input type="radio" name="c4" value="5+"> Plus de 5<br>
+  </div>
+  <div class="question">
+    <label>5. Comprenez-vous le fonctionnement des produits structurés ?</label>
+    <input type="radio" name="c5" value="oui" required> Oui<br>
+    <input type="radio" name="c5" value="non"> Non<br>
+  </div>
+  <div class="question">
+    <label>6. Avez-vous déjà subi une perte financière significative sur un placement ?</label>
+    <input type="radio" name="c6" value="oui" required> Oui<br>
+    <input type="radio" name="c6" value="non"> Non<br>
+  </div>
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  <!-- SECTION 2 : Tolérance au risque -->
+  <div class="question">
+    <label>7. Que signifie le mot « risque » pour vous ?</label>
+    <input type="radio" name="q1" value="3" required> a. Potentiel de perte<br>
+    <input type="radio" name="q1" value="5"> b. Incertitude<br>
+    <input type="radio" name="q1" value="7"> c. Potentiel de gain<br>
+  </div>
+  <div class="question">
+    <label>8. Rapport rendement/risque : que privilégiez-vous ?</label>
+    <input type="radio" name="q2" value="4" required> a. Rendement<br>
+    <input type="radio" name="q2" value="5"> b. Équilibre<br>
+    <input type="radio" name="q2" value="7"> c. Moins de risque<br>
+  </div>
+  <div class="question">
+    <label>9. Quelle proportion de vos économies placeriez-vous sur des actifs risqués ?</label>
+    <input type="radio" name="q3" value="2" required> a. Aucune<br>
+    <input type="radio" name="q3" value="4"> b. Petite partie<br>
+    <input type="radio" name="q3" value="6"> c. Une part importante<br>
+    <input type="radio" name="q3" value="7"> d. L’essentiel<br>
+  </div>
+  <div class="question">
+    <label>10. Si un investissement chute de 10% dès le lendemain ?</label>
+    <input type="radio" name="q4" value="7" required> a. J'en rachète<br>
+    <input type="radio" name="q4" value="4"> b. Je ne fais rien<br>
+    <input type="radio" name="q4" value="3"> c. Je vends tout<br>
+    <input type="radio" name="q4" value="5"> d. J’attends et je vends<br>
+  </div>
+  <div class="question">
+    <label>11. Vous avez 30% de gain en 4 mois (objectif 10%/an), que faites-vous ?</label>
+    <input type="radio" name="q5" value="3" required> a. Vendre tout<br>
+    <input type="radio" name="q5" value="4"> b. Vendre une partie<br>
+    <input type="radio" name="q5" value="5"> c. Maintenir<br>
+    <input type="radio" name="q5" value="7"> d. Doubler<br>
+  </div>
+  <div class="question">
+    <label>12. En cas de gain inattendu, vous investissez :</label>
+    <input type="radio" name="q6" value="2" required> a. Dans un placement sûr<br>
+    <input type="radio" name="q6" value="4"> b. Dans votre portefeuille<br>
+    <input type="radio" name="q6" value="6"> c. Placement 50% de chance de gain<br>
+    <input type="radio" name="q6" value="7"> d. Placement 25% de doubler<br>
+  </div>
+  <div class="question">
+    <label>13. Accepteriez-vous plus de volatilité pour un placement durable ?</label>
+    <input type="radio" name="q7" value="4" required> Oui<br>
+    <input type="radio" name="q7" value="6"> Non<br>
+  </div>
+  <div class="question">
+    <label>14. Votre horizon de placement est :</label>
+    <input type="radio" name="q8" value="5" required> Moins de 5 ans<br>
+    <input type="radio" name="q8" value="6"> Entre 5 et 10 ans<br>
+    <input type="radio" name="q8" value="7"> Plus de 10 ans<br>
+  </div>
+  <div class="question">
+    <label>15. Un proche veut changer de vie pour un métier risqué :</label>
+    <input type="radio" name="q9" value="3" required> Je le dissuade<br>
+    <input type="radio" name="q9" value="4"> Je le conseille avec prudence<br>
+    <input type="radio" name="q9" value="6"> Je l'encourage<br>
+  </div>
 
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
+  <!-- Coordonnées -->
+  <div class="question">
+    <label>Votre Email :</label>
+    <input type="email" name="email" required>
+  </div>
+  <div class="question">
+    <label>Votre Téléphone :</label>
+    <input type="tel" name="phone" required>
+  </div>
 
-        setInterval(updateCountdown, 1000);
-    </script>
+  <input type="submit" value="Obtenir mon profil">
+</form>
+
+<div class="result" id="result" style="display:none;"></div>
+
+<script>
+  document.getElementById('riskForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    let score = 0;
+
+    for (let i = 1; i <= 9; i++) {
+      const selected = form.querySelector(`input[name="q${i}"]:checked`);
+      if (selected) score += parseInt(selected.value);
+    }
+
+    let profile = "";
+    if (score < 36) {
+      profile = "🎯 Votre profil est : <strong>Prudent</strong><br>Vous privilégiez la sécurité et une croissance lente.";
+    } else if (score < 54) {
+      profile = "🎯 Votre profil est : <strong>Équilibré</strong><br>Vous recherchez un compromis entre risque et rendement.";
+    } else {
+      profile = "🎯 Votre profil est : <strong>Dynamique</strong><br>Vous acceptez une forte volatilité pour viser un rendement élevé.";
+    }
+
+    document.getElementById('result').innerHTML = `
+      <h3>Résultat</h3>
+      <p><strong>Score :</strong> ${score}</p>
+      <p>${profile}</p>
+      <p>📩 Nous vous recontacterons à l’adresse <strong>${form.email.value}</strong> ou au <strong>${form.phone.value}</strong>.</p>
+    `;
+    document.getElementById('result').style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script>
+
 </body>
 </html>
-
-
-
 
 
